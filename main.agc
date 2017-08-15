@@ -22,9 +22,18 @@ SetTextSize(1,100)
 SetTextColor (1, 255, 0, 0, 255)
 //SetTextPosition(1,GetVirtualWidth()/2-GetTextTotalWidth(1)/2,GetVirtualHeight()/2-GetTextTotalHeight(1)/2)
 
+d=1 //direction of the words
 
 do
 	SetTextPosition(1,x,0)
-    x=x+1
+/******** Text to Bounce off walls ***************
+	if GetTextX (1) > GetVirtualWidth()-GetTextTotalWidth(1)
+		d = -1
+	endif
+	if GetTextX(1)<0
+		d=1
+	endif
+*/
+    x=x+d
     Sync()
 loop
